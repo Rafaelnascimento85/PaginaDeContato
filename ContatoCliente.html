@@ -1,0 +1,53 @@
+<!--Inicialmente é feita a declaração do cabeçalho: --> <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulários</title>
+</head>
+
+<body>
+<!--Após a abertura dp corpo da página, deve-se, então, criar o formulário. Veja que ele aponta para página contato.php (aprendemos, em outra oportunidade, sobre php). -->
+    <form method="post" action="contato.php">
+        <h1>Contato</h1>
+<!--Aqui, temos o primeiro rótulo seguido do seu campo de entrada: um input do tipo text (caixa de texto):-->
+
+    <label>Nome completo</label><br>
+    <input type="text" name="nome" size="50" placeholder="Entre com seu Nome Completo">
+    <!--Essa quebra de linha foram introduzids para separar os itens inseridos (Quando tratarmos sobre CSS, veremos formas melhores de inserir mensagens.). -->
+
+    <br><br>
+<!-- Aqui, é utilizada uma tabela para posicionar corretamente os itens (mais uma vez, ressaltamos que adiante apresentaremos formas melhores de posicionar objetos com CSS). -->
+    <table>
+        <tr>
+            <td>
+                <label>E-mail</label><br>
+    <input type="email" name="number" placeholder="Entre com seu E-mail">
+    </td>
+
+    <td>
+        <label>Telefone</label><br>
+        <input type="email" name="number" placeholder="Entre com o seu telefone">
+    </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <label>Assunto</label><br>
+    <input type="text" name="assunto" size="50" placeholder="Informe o assunto">
+
+    <br><br>
+<!-- A seguir apresentamos uma textarea: um campo que permite a inserção de várias linhas de texto. -->
+
+    <label for="">Mensagem</label><br>
+    <textarea name="mensagem" placeholder="Entre com a mensgaem" rows="5" cols="50"></textarea>
+
+    <br><br>
+<!-- O último item do formulário é um input do tipo submit. Esse item é necessário para que o formulário seja enviado para a página apontada no atributo action da tag <form>.-->
+     <input type="submit" name="submit" value="Emnviar">
+     
+    </form>
+</body>
+</html
