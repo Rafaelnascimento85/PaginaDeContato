@@ -9,7 +9,7 @@
 
 <body>
 <!--Após a abertura dp corpo da página, deve-se, então, criar o formulário. Veja que ele aponta para página contato.php (aprendemos, em outra oportunidade, sobre php). -->
-    <form method="post" action="contato.php">
+    <form method="post" action="contato.php" id="meuFormulario">
         <h1>Contato</h1>
 <!--Aqui, temos o primeiro rótulo seguido do seu campo de entrada: um input do tipo text (caixa de texto):-->
 
@@ -28,7 +28,7 @@
 
     <td>
         <label>Telefone</label><br>
-        <input type="tel" name="number" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{5}-\d{4}">
+        <input type="tel" name="number" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{}-\d{4}">
     </td>
         </tr>
     </table>
@@ -46,8 +46,33 @@
 
     <br><br>
 <!-- O último item do formulário é um input do tipo submit. Esse item é necessário para que o formulário seja enviado para a página apontada no atributo action da tag <form>.-->
-     <input type="submit" name="submit" value="Emnviar">
+     <input type="submit" name="submit" value="Enviar">
      
     </form>
+    <p id="mensagemSucesso" style="display:none; color: green; font-weight: bold; margin-top: 15px;">
+        Sua mensagem foi enviada com sucesso, agradecemos o contato!
+    </p>
+
+    <script>
+        // O CÓDIGO JAVASCRIPT
+        const formulario = document.getElementById('meuFormulario');
+        const mensagem = document.getElementById('mensagemSucesso');
+
+        formulario.addEventListener('submit', function(event) {
+            // Impede o envio real do formulário para evitar o recarregamento da página
+            event.preventDefault(); 
+            
+            // Exibe a mensagem de sucesso
+            mensagem.style.display = 'block';
+
+            // Opcional: Oculta a mensagem após 5 segundos
+            setTimeout(function() {
+                mensagem.style.display = 'none';
+            }, 5000);
+            
+            // Opcional: Reseta o formulário para limpar os campos
+            formulario.reset();
+        });
+    </script>
 </body>
 </html
